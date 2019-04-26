@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Front Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple App</h1>
+    <p>Using forms for CRUD (instead of Postman)</p>
+    <p>READ ALL</p>
+    <ul>
+        ${array.map(s => `
+            <li>${s.name}, ${s.school}, <span style='color: grey;'>${s.id}</span></li>
+        `).join('')}
+    </ul>
+    <p>FILTER BY SCHOOL</p>
+    <form action='/schools' method='POST'>
+        <select>
+            ${schools.map(s => `
+                <option>${s}</option>
+            `).join('')}
+        </select>
+        <button type='submit'>Filter by School</button>
+    </form>
+    
+    <p>CREATE</p>
+    <form action='/students' method="POST">
+        <input type='text' name='name' placeholder='name'>
+        <input type='text' name='school' placeholder='school'>
+        <button type='submit'>Add</button>
+    </form>
+
+    <p>DELETE</p>
+    <form action='/delete' method="POST">
+        <input type='text' name='id' placeholder='copy and paste ID here'>
+        <button type='submit'>Delete</button>
+    </form>
+
+    <p>UPDATE</p>
+    <form action='/update' method='POST'>
+        <input type='text' name='id' placeholder='copy and paste ID here'>
+        <input type='text' name='newName' placeholder='corrected name'>
+        <input type='text' name='newSchool' placeholder='corrected school name'>
+        <button type='submit'>Update</button>
+    </form>
+
+</body>
+</html>
