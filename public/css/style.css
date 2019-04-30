@@ -1,0 +1,100 @@
+/* box-sizing border-box */
+* { 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0; }
+  
+  body, .container {
+    user-select: none;
+    overflow-x: hidden!important;
+    margin: 0;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Tahoma, sans-serif;
+    font-size: 18px; 
+  }
+
+  .container {
+      width: 80vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .center {
+      text-align: center;
+  }
+
+  form {
+      margin-top: 20px;
+  }
+
+  input {
+      margin: 2px;
+      padding: 2px;
+  }
+
+  nav {
+      background: black;
+      color: white;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 40px;
+  }
+
+  nav ul {
+      display: flex;
+      justify-content: center;
+    }
+    
+nav li {
+      padding: 0 20px;
+      flex: 0 1 auto;
+    list-style: none;
+  }
+
+  nav a {
+      color: white;
+      text-decoration: none;
+  }
+
+  .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    
+    .row > div {
+        flex: 1 1 auto;
+        align-items: flex-start;
+  }
+
+  .small {
+      font-size: 0.8rem;
+  }
+
+  .ital {
+      font-style: italic;
+  }
+
+  .grey {
+      color: #888;
+  }
+
+  .red {
+    border: 1px solid red;
+  }
+
+  .message {
+      background: #ddd;
+      border: 1px solid grey;
+      border-radius: 5px;
+      color: #333;
+      padding: 2px 6px;
+  }

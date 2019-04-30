@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Admin</title>
+    <link rel='stylesheet' href='/public/css/style.css' type='text/css'>
+
+</head>
+<body>
+    <div class='container'>
+        <nav>${nav}</nav>
+        <h1>Login Page</h1>
+        <p class='message'>${msgExists ? `${msgExists}` : `` }</p>
+        <form action='/login' method='POST'>
+            <label>Email</label>
+            <input type='email' name='email' placeholder='email address' required><br>
+            <label>Password</label>
+            <input type='password' name='password' placeholder='password' required><br>
+            <input type='submit' value='Login'>
+        </form>
+        <p>Don't have an account yet? <a href='/register'>Register</a></p>
+    </div>
+</body>
+</html>
